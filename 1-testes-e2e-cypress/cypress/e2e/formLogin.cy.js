@@ -3,7 +3,7 @@ describe('form login', () => {
     cy.visit('/')
   })
 
-  it('Não deve permitir um email invalido', () => {
+  it('Não deve permitir um email invalido', {browser: 'electron'}, () => {
     cy.getByData('botao-login').click()
     cy.getByData('email-input').type('neilton@alura')
     cy.getByData('senha-input').type('123456')
